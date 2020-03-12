@@ -7,13 +7,22 @@ class Virus extends React.Component {
 
   state = {
     cards: [
-      { id: 1, front: "Virus 1", back: "Virus 1 Back",  flipped: false },
-      { id: 2, front: "Virus 2", back: "Virus Back 2",  flipped: false },
-      { id: 3, front: "Virus 3", back: "Virus Back 3",  flipped: false }
+      { id: 1, front: "Virus 1", back: "Virus 1 Back",  flipped: false, editing: false },
+      { id: 2, front: "Virus 2", back: "Virus Back 2",  flipped: false, editing: false },
+      { id: 3, front: "Virus 3", back: "Virus Back 3",  flipped: false, editing: false }
     ],
     showForm: false
   }
   
+  toggleEdit = (card) => {
+    this.setState({ editing: !this.state.editing});
+    console.log(card);
+  }
+  
+  editCard = (revision) => {
+    console.log(revision)
+  }
+
   toggleForm = () => {
     // nice easy way to toggle element
     this.setState({
@@ -57,11 +66,12 @@ class Virus extends React.Component {
   } 
 
 render() {
+  const { showForm } = this.state
   return (
     
     <div>
-      <NewVirus/>
-      <VirusCard cards={this.state.cards} deleteCard={this.deleteCard} flipCard={this.flipCard}/>
+      <NewVirus addCard={this.newCard} />
+      <VirusCard cards={this.state.cards} deleteCard={this.deleteCard} flipCard={this.flipCard} editCard={this.toggleEdit}/>
     </div>
   )
 }

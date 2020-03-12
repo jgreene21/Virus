@@ -25,6 +25,7 @@ const VirusCard = (props) => (
           </div>
           <div className='iconPadding'>
             <Icon bordered name='trash alternate' onClick={() => props.deleteCard(card.id)} />
+            <Icon bordered name='pencil' onClick={() => props.editCard(card)} />
           </div>
         </Card.Content>
 

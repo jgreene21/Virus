@@ -5,24 +5,39 @@ class NewVirus extends React.Component {
   state = {
     id: '',
     front: '',
-    back: ''
-   
+    back: '', 
+    flipped: false,
+    editing: false
+    
   }
   generateId = () => {
     return Math.floor(Math.random()*100)
   }
 
+  componentDidMount(){
+    if (this.props.id) 
+      this.setState({front: this.props.front, back: this.props.back})
+  }
+  
   handleSubmit = (e) => {
     //send up to App.js state via function passed down by props:
+    if (this.props.id) {
+      this.props.edit({id: this.props.id, ...this.state});
+      this.props.toggleEdit()
+    } else {
+    
     this.props.addCard(this.state)
-
+    
     //clear form once submitted
     this.setState({
       id: '', 
       front:'',
-      back:''
+      back:'',
+      flipped: false,
+      editing: false
     })
   }
+}
 
   handleChange = (event) => {   
     //call random ID generator
