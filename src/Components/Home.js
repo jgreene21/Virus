@@ -1,4 +1,6 @@
-import React from 'react'
+import React from 'react';
+import Background from './common-cold-viruses.jpg';
+import { Image } from 'semantic-ui-react';
 
 
 class Home extends React.Component {
@@ -6,9 +8,10 @@ class Home extends React.Component {
 
 render() {
   return (
-    <div>
-      Home
-    </div>
+    <container>
+    <Image src={Background} fluid />
+    <h1>The Coronavirus is in Good Company</h1>
+  </container>
   )
 }
 
