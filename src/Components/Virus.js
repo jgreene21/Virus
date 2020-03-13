@@ -36,8 +36,8 @@ class Virus extends React.Component {
     });
   }
 
-  editCard = (revision) => {
-    console.log(revision)
+  editCard = () => {
+    console.log('Edit Hit')
   }
 
   toggleForm = () => {
@@ -97,6 +97,7 @@ render() {
                  deleteCard={this.deleteCard} 
                  flipCard={this.flipCard} 
                  toggleEdit={this.toggleEdit}
+                 editCard={this.editCard}
                  />
     </div>
   )
