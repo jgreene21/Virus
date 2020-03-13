@@ -36,3 +36,22 @@
     transform: rotate(360deg);
   }
 }
+
+.menu {
+  padding: 10px; 
+  background-color: blue;
+}
+.image { 
+  position: relative; 
+  width: 100%; /* for IE 6 */
+}
+
+h1 { 
+  position: absolute; 
+  top: 275px; 
+  left: 0; 
+  width: 100%; 
+  color: white;
+  font-family: 'Times New Roman', Times, serif;
+}
+

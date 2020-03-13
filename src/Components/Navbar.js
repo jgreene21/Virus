@@ -12,7 +12,7 @@ export default class Navbar extends Component {
 
     return (
       <div>
-        <Menu pointing inverted>
+        <Menu pointing inverted >
           <Link to='/'>
             <Menu.Item
               as='div'

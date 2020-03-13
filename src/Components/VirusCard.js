@@ -1,7 +1,11 @@
 import React from 'react'
-import { Button, Card, Checkbox, Icon } from 'semantic-ui-react'
+import { Button, Card, Checkbox, Icon } from 'semantic-ui-react';
+import Virus from './Virus'
+
+
 
 const VirusCard = (props) => (
+  
   <Card.Group>
     {props.cards.map(card => (
       <Card key={`card-${card.id}`}>
@@ -25,7 +29,7 @@ const VirusCard = (props) => (
           </div>
           <div className='iconPadding'>
             <Icon bordered name='trash alternate' onClick={() => props.deleteCard(card.id)} />
-            <Icon bordered name='pencil' onClick={() => props.editCard(card)} />
+            <Icon bordered name='pencil'  />
           </div>
         </Card.Content>
 
