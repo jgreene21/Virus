@@ -1,7 +1,7 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom'
 import './App.css';
-import { Button, Container, } from "semantic-ui-react";
+import { Container, } from "semantic-ui-react";
 import Home from './Components/Home'
 import About from './Components/About'
 import Virus from './Components/Virus'
@@ -11,10 +11,9 @@ import Navbar from './Components/Navbar';
 
 function App() {
   return (
-    <div className="App">
-       <Navbar/>
+    <div>
+      <Navbar/>
       <Container>
-       
         <Switch>
           <Route exact path='/' component={Home}/>
           <Route exact path='/About' component={About}/>

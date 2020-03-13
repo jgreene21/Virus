@@ -1,5 +1,5 @@
 import React from 'react'
-import { Form, Button } from 'semantic-ui-react'
+import { Form } from 'semantic-ui-react'
 
 class NewVirus extends React.Component {
   state = {
@@ -70,7 +70,7 @@ class NewVirus extends React.Component {
             onChange={this.handleChange}
             />
           </Form.Group>
-          <Form.Button compact color='violet'>SUBMIT</Form.Button>
+          <Form.Button compact color='blue'>SUBMIT</Form.Button>
           <hr />
         </Form>
      

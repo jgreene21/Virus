@@ -1,0 +1,13 @@
+1) Ternary in JSX for edit form on each card - shows when editing value is switched to true by toggleEdit function.
+
+
+2) At the same time, usual displays will need to be turned off by reading the same editing value, also via a turnary in JSX.
+
+
+3) Edited information needs to be tracked via 
+
+
+
+
+
+Virus is going to pass new card function to navbar
