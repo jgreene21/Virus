@@ -1,5 +1,5 @@
 import React from 'react'
-import { Card, Checkbox, Icon } from 'semantic-ui-react'
+import { Card, Checkbox, Icon, Form } from 'semantic-ui-react'
 
 class VirusCard extends React.Component {
   
@@ -7,9 +7,28 @@ class VirusCard extends React.Component {
   
     
     return (
-    <Card.Group>
+      <Card.Group>
       {this.props.cards.map(card => (
         <Card key={`card-${card.id}`}>
+          {card.editing ? 
+            <Form onSubmit={() => this.props.editCard()}>
+            <Form.Group>
+              <div className='cardText'>
+              <Form.TextArea
+                width={16}
+                name='front'
+                value={card.front}
+              />
+              <Form.TextArea
+                width={16}
+                value={card.back}
+                name='back'
+              /></div>
+            </Form.Group>
+            <Form.Button compact color='blue'>SUBMIT</Form.Button>
+          </Form>
+          : 
+          <div>
           <Card.Content extra>
             <div className='ui two buttons'>
               <Checkbox toggle label='Flip'onChange={() => this.props.flipCard(card.id)} />
@@ -24,11 +43,10 @@ class VirusCard extends React.Component {
               </div>
             </Card.Description>
           </Card.Content>
+          </div>
+          }
           <Card.Content extra>
-            <div className='ui two buttons'>
-              {/* <Checkbox label='I know this one!'/> */}
-
-            </div>
+           
             <div className='iconPadding'>
               <Icon bordered name='trash alternate' onClick={() => this.props.deleteCard(card.id)} />
               <Icon bordered name='pencil' onClick={() => this.props.toggleEdit(card.id)} />
